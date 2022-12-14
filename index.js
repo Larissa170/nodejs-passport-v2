@@ -31,6 +31,7 @@ app.get("/", isLoggedIn, (req, res) => {
     res.render("index", { user: req.user });
 });
 app.get("/admin", isLoggedIn, (req, res) => {
+    console.log(req.session.passport.user);// para saber quais os parametros estao chegando
     res.render("admin", { user: req.user });
 });
 
